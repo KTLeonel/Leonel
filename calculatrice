@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>calculatrice</title>
+</head>
+<script>// Demander le premier nombre
+    var nombre1 = prompt("Entrez le premier nombre :");
+    
+    // Demander le deuxième nombre
+    var nombre2 = prompt("Entrez le deuxième nombre :");
+    
+    // Demander l'opération
+    let operation = prompt("Choisissez une opération (+, -, *, /, %) :");
+    
+    // Effectuer l'opération
+    let resultat;
+    switch (operation) {
+      case "+":
+        resultat = parseInt(nombre1) + parseInt(nombre2);
+        break;
+      case "-":
+        resultat = parseInt(nombre1) - parseInt(nombre2);
+        break;
+      case "*":
+        resultat = parseInt(nombre1) * parseInt(nombre2);
+        break;
+      case "/":
+        if (parseInt(nombre2) !== 0) {
+          resultat = parseInt(nombre1) / parseInt(nombre2);
+        } else {
+          alert("Erreur : division par zéro !");
+      
+        }
+        break;
+      case "%":
+        if (parseInt(nombre2) !== 0) {
+          resultat = parseInt(nombre1) % parseInt(nombre2);
+        } else {
+          alert("Erreur : division par zéro !");
+     
+        }
+        break;
+      default:
+        alert("Erreur : opération non reconnue !");
+       
+    }
+    
+    // Afficher le résultat
+    alert("Résultat : " + resultat);
+    </script>
+</html>
