@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#erreur {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+#tableau {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0% auto;
+}
+#tableau br {
+    margin-bottom: 0%;
+}
+#tableau span {
+    display: table-cell;
+    border-collapse: collapse;
+    border-spacing: 0cap;
+    margin: 0px;
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+#botton.btn-primary {
+    background-color: #007bff;
+}
+button.btn-primary {
+    background-color: blue;
+    color: #ddd;
+    width: 1000px;
+    height: 35px;
+    border-radius: 5px;
+    border: 4px solid#007bff;
+}
+#formulaire {
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+gap: 40px;
+}
+
+#formulaire .form-group:nth-child(3) {
+margin-right: 0%;
+}

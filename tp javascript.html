@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau aléatoire</title>
+    <link rel="stylesheet" href="btcc.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tableau aléatoire</h1>
+        <form id="formulaire">
+            <div class="form-group">
+                <label for="dimension">Dimension du tableau</label><br><br>
+                <input type="text" id="dimension" name="dimension" required>
+            </div>
+            <div class="form-group">
+                <label for="min">La valeur minimale</label><br><br>
+                <input type="text" id="min" name="min" required>
+            </div>
+            <div class="form-group">
+                <label for="max">La valeur maximale</label><br><br>
+                <input type="text" id="max" name="max" required>
+            </div><br>
+            <div>
+            <button type="submit" class="btn btn-primary">Générer le tableau</button>
+            <p id="erreur"></p>
+            </div>
+        </form>
+        <div id="tableau"></div>
+
+    <script>
+        const formulaire = document.getElementById('formulaire');
+        const erreur = document.getElementById('erreur');
+        const tableau = document.getElementById('tableau');
+
+        formulaire.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const dimension = parseInt(document.getElementById('dimension').value);
+            const min = parseInt(document.getElementById('min').value);
+            const max = parseInt(document.getElementById('max').value);
+
+            if (isNaN(dimension) || isNaN(min) || isNaN(max)) {
+                erreur.textContent = 'Les valeurs doivent être des entiers.';
+                return;
+            }
+
+            if (min >= max) {
+                erreur.textContent = 'La valeur minimale doit être inférieure à la valeur maximale.';
+                return;
+            }
+
+            const tableauHtml = [];
+            for (let i = 0; i < dimension; i++) {
+                const nombre = Math.floor(Math.random() * (max - min + 1)) + min;
+                tableauHtml.push(`<span>${nombre}</span>`);
+                if ((i + 1) % 10 === 0) {
+                    tableauHtml.push('<br>');
+                }
+            }
+            tableau.innerHTML = tableauHtml.join(' ');
+            erreur.textContent = '';
+        });
+    </script>
+</body>
+</html>
